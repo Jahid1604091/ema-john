@@ -8,7 +8,7 @@ import Error from "./pages/Error";
 function App() {
   return (
     <BrowserRouter>
-    <Navbar/>
+   
       <Switch>
       <Route path='/' exact>
         <Home/>
