@@ -1,9 +1,12 @@
-import Navbar from "./components/Navbar";
+
 import Home from "./pages/Home";
 import {BrowserRouter,Route,Switch} from 'react-router-dom'
-import About from "./pages/About";
+
 import Footer from "./components/Footer";
 import Error from "./pages/Error";
+import ReviewOrder from "./pages/ReviewOrder";
+import ProductDetails from "./components/ProductDetails";
+import PlaceOrder from "./pages/PlaceOrder";
 
 function App() {
   return (
@@ -13,7 +16,9 @@ function App() {
       <Route path='/' exact>
         <Home/>
       </Route>
-      <Route path='/about' exact component={About}/>
+      <Route path='/order-review' exact component={ReviewOrder}/>
+      <Route path='/product/:key' exact component={ProductDetails}/>
+      <Route path='/place-order/' exact component={PlaceOrder}/>
       <Route path='*'>
         <Error/>
       </Route>

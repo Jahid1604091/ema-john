@@ -1,8 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const Product = ({ product, handleAddProduct }) => {
-    const { img, name, seller, price, stock } = product
+    const { img, name, seller, price, stock,key } = product
     // console.log(product)
     return (
         <Wrapper>
@@ -13,11 +14,11 @@ const Product = ({ product, handleAddProduct }) => {
                     </div>
                     <div className="col-md-8">
                         <div className="product-details">
-                            <h3>{name}</h3>
+                         <Link to={`/product/${key}`}><h3>{name}</h3></Link>   
                             <p>by {seller}</p>
                             <h5> ${price}</h5>
                             <p>only {stock} in stock - so hurry up !</p>
-                            <button onClick={()=>handleAddProduct(product)} className='btn'><i className="fas fa-cart"></i> add to cart</button>
+                            <button onClick={()=>handleAddProduct(product)} className='btn'><i className="fas fa-shopping-cart"></i> add to cart</button>
                         </div>
 
                     </div>
